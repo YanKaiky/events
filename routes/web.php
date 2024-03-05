@@ -30,5 +30,11 @@ Route::get('/', function () {
 });
 
 Route::get('/products', function () {
-    return view('products');
+    $search = request('search');
+    
+    return view('products', ["search" => $search]);
+});
+
+Route::get('/productss/{id?}', function (int $id = null) {
+    return view('product', ['id' => $id]);
 });
