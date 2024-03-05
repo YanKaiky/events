@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,25 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $name  = "Yan";
-    $age  = 21;
-    $job = "Full Stack Developer & Mobile";
-    $array = [10, 20, 30, 40, 50, 60, 70, 80, 90];
-    $names = ["Yan", "Kaiky", "Augusto", "Miles", "Carlos", "Eliza", "Jacira"];
-
-    return view('welcome', [
-        "name" => $name,
-        "age" => $age,
-        "job" => $job,
-        "array" => $array,
-        "names" => $names
-    ]);
-});
+Route::get('/', [EventController::class, 'index']);
+Route::get('/events/create', [EventController::class, 'store']);
 
 Route::get('/products', function () {
     $search = request('search');
-    
+
     return view('products', ["search" => $search]);
 });
 
