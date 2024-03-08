@@ -9,11 +9,11 @@
         <form action="/events" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="image">Event:</label>
+                <label for="image">Image:</label>
 
                 <input type="file" class="form-control-file" id="image" name="image" placeholder="image">
             </div>
-            
+
             <div class="form-group">
                 <label for="title">Event:</label>
 
@@ -39,6 +39,34 @@
                 <label for="description">Description:</label>
 
                 <textarea class="form-control" id="description" name="description" placeholder="Description..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="items">Add Items:</label>
+
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" id="Chairs" value="Chairs">Chairs</input>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" id="Snacks" value="Snacks">Snacks</input>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" id="Drinks" value="Drinks">Drinks</input>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" id="Lights" value="Lights">Lights</input>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" id="Stage" value="Stage">Stage</input>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="items[]" id="Screens" value="Screens">Screens</input>
+                </div>
             </div>
 
             <input type="submit" value="Create event" class="btn btn-primary">
