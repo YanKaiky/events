@@ -21,6 +21,12 @@
             </div>
 
             <div class="form-group">
+                <label for="date">Date:</label>
+
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+
+            <div class="form-group">
                 <label for="city">City:</label>
 
                 <input type="text" class="form-control" id="city" name="city" placeholder="City">
