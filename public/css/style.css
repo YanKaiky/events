@@ -32,6 +32,16 @@ header {
     background-color: #af27ea;
 }
 
+.msg {
+    background-color: #00be33;
+    color: white;
+    /* border-radius: 5px; */
+    width: 100%;
+    margin-bottom: 0px;
+    text-align: center;
+    padding: 10px;
+}
+
 /* nabra */
 
 #navbar img {
@@ -123,6 +133,24 @@ header {
 .card-participants {
     font-size: 14px;
     color: #757575;
+}
+
+#event-create-container {
+    padding: 30px;
+}
+
+#event-create-container label {
+    font-weight: bold;
+}
+
+#event-create-container .form-group {
+    gap: 5px;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-container textarea {
+    font-size: 12px;
 }
 
 /* footer */
