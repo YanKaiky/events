@@ -16,13 +16,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'store']);
-
-Route::get('/products', function () {
-    $search = request('search');
-
-    return view('products', ["search" => $search]);
-});
-
-Route::get('/productss/{id?}', function (int $id = null) {
-    return view('product', ['id' => $id]);
-});

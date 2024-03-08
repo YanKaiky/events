@@ -1,35 +1,38 @@
 @extends('layouts.main')
+
 @section('title', 'YK Events')
+
 @section('content')
 
-<h1>Yan Kaiky</h1>
-<img src="/img/bg.png" alt="Bg">
-@if (10 < 5)
-    <p>Is True</p>
-@endif
+<div id="search-container" class="col-md-12">
+    <h1>Search a event</h1>
 
-<p>{{ $name }}</p>
-<p>{{ $age }} years old</p>
+    <form action="">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Search...">
+    </form>
+</div>
 
-@if ($name === 'Yan')
-    <p>His name's {{ $name }} with {{ $age }} years old and he does {{ $job }}</p>
-@elseif ($name == 'Kaiky')
-    <p>His name's {{ $name }} with {{ $age }} years old and he does {{ $job }}</p>
-@else
-    <p>His name isn't {{ $name }}</p>
-@endif
+<div id="events-container" class="col-md-12">
+    <h2>Next events</h2>
 
-@for ($i = 0; $i < count($array); $i++)
-    <p>{{ $array["$i"] }} - {{ $i }}</p>
-    @if ($i === 2)
-        <p>Repete o {{ $array["$i"] }}</p>
-    @endif
-@endfor
+    <p class="subtitle">Look next events</p>
 
-@foreach ($names as $name)
-    <p>{{ $loop->index }} - {{ $name }}</p>
-@endforeach
+    <div id="cards-container" class="row">
+        @foreach ($events as $event)
+            <div class="card col-md-3">
+                <img src="/img/conference.png" alt="{{ $event->title }}">
 
-{{-- Comments --}}
+                <div class="card-body">
+                    <p class="card-date">27/03/2024</p>
+                    <h5 class="card-">{{ $event->title }}</h5>
+
+                    <p class="card-participants">30 participants</p>
+
+                    <a href="" class="btn btn-primary">Get info</a>
+                </div>
+            </div>    
+        @endforeach
+    </div>
+</div>
 
 @endsection
