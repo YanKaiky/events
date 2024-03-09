@@ -204,6 +204,14 @@ header {
     margin-top: 30px;
 }
 
+/* Edit page */
+
+.img-preview {
+    width: 180px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
 /* footer */
 
 footer {
