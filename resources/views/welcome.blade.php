@@ -6,15 +6,18 @@
     <div id="search-container" class="col-md-12">
         <h1>Search a event</h1>
 
-        <form action="">
+        <form action="/" method="GET">
             <input type="text" id="search" name="search" class="form-control" placeholder="Search...">
         </form>
     </div>
 
     <div id="events-container" class="col-md-12">
-        <h2>Next events</h2>
-
-        <p class="subtitle">Look next events</p>
+        @if ($search)
+            <h2>Search by "{{ $search }}"</h2>
+        @else
+            <h2>Next events</h2>
+            <p class="subtitle">Look next events</p>
+        @endif
 
         <div id="cards-container" class="row">
             @foreach ($events as $event)
@@ -31,7 +34,10 @@
                     </div>
                 </div>
             @endforeach
-            @if (count($events) == 0)
+
+            @if (count($events) == 0 && $search)
+                <p>No data found with "{{ $search }}"! <a href="/">Se all</a></p>
+            @elseif (count($events) == 0)
                 <p>No have events yet</p>
             @endif
         </div>
